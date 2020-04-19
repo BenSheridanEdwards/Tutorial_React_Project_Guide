@@ -19,4 +19,6 @@ $ npx create-react-app project_name
 
 Once create-react-app has finished doing it's thing, lets do some folder cleanup (Optional).
 
-I like to just drag my react project up one level, link to my repo on GitHub and clear the readme (if I've already got one ready for the project). 
+I like to just drag my react project up one level to my root repo folder, delete the now empty React project folder, and add my own README to my project.
+
+![]()
