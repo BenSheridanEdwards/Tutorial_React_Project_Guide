@@ -26,17 +26,17 @@ jobs:
       - run:
             name: Run Tests
             command: npm run-script test
-      # - run:
-      #       name: Setup Code Climate test-reporter
-      #       command: |
-      #         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      #         chmod +x ./cc-test-reporter
-      # - run:
-      #       name: Build, Save and Send Coverage Report to Code Climate
-      #       command: |
-      #         ./cc-test-reporter before-build
-      #         npm run test:coverage
-      #         ./cc-test-reporter after-build --debug -t lcov --exit-code $?
+      - run:
+            name: Setup Code Climate test-reporter
+            command: |
+              curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+              chmod +x ./cc-test-reporter
+      - run:
+            name: Build, Save and Send Coverage Report to Code Climate
+            command: |
+              ./cc-test-reporter before-build
+              npm run test:coverage
+              ./cc-test-reporter after-build --debug -t lcov --exit-code $?
       # - run:           
       #       name: Deploy to Firebase Hosting
       #       command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
