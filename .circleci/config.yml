@@ -37,8 +37,8 @@ jobs:
               ./cc-test-reporter before-build
               npm run test:coverage
               ./cc-test-reporter after-build --debug -t lcov --exit-code $?
-      # - run:           
-      #       name: Deploy to Firebase Hosting
-      #       command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
-      #       description: Run tests with coverage and upload results to code climate
+      - run:           
+            name: Deploy to Firebase Hosting
+            command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
+            description: Run tests with coverage and upload results to code climate
            
