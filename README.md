@@ -178,4 +178,14 @@ Lastly head over to your package.json, there's one final thing we need to do. Be
 
 ![Add test:coverage script]()
 
-Now commit and push to GitHub, and head over to your repo see the magic happen.
+Now commit and push to GitHub, and head over to your repo on circleci.com to see the magic happen.
+
+![Code Climate integration successful build]()
+
+Success! We're now sending test coverage reports to Code Climate, head back over to your repo on CodeClimate to check how we did: 
+
+![Test Coverage on CodeClimate]()
+
+A big fat F for test coverage, that sounds about right considering we have one empty test! That's a problem for future you to solve. 
+
+Now lets complete this tutorial with some deployment to FireBase! 
