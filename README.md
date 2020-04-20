@@ -176,7 +176,23 @@ Lastly head over to your package.json, there's one final thing we need to do. Be
 "test:coverage": "set CI=true && react-scripts test --coverage",
 ```
 
-![Add test:coverage script]()
+and to the bottom of your package.json file:
+
+```
+ "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/serviceWorker.js",
+      "!**/index.js"
+    ]
+  }
+```
+
+Your package.json should now look like: 
+
+![Add test:coverage script and jest ignore coverage]()
 
 Now commit and push to GitHub, and head over to your repo on circleci.com to see the magic happen.
 
@@ -189,3 +205,131 @@ Success! We're now sending test coverage reports to Code Climate, head back over
 A big fat F for test coverage, that sounds about right considering we have one empty test! That's a problem for future you to solve. 
 
 Now lets complete this tutorial with some deployment to FireBase! 
+
+## Firebase
+
+First lets head over to Firebase.com, sign up or login with GitHub and when you're redirected to your project console, add your desired project. Easy stuff. 
+
+![Add firebase project]()
+
+You'll then be asked to name your project:
+
+![Name firebase project]()
+
+Then you can choose to add google analystics to your project, this is optional either way, I choose yet in case I want to see how my app is doing in the future. 
+
+![Google Analytics Option]()
+
+After a few seconds of waiting, your project will be ready:
+
+![Firebase project ready]()
+
+Next, head to your terminal inside your react project, you need to run two very similar commands, but trust me, all will be explained. 
+
+First, install firebase-tools globally, allowing you to use firebase commands throughout your local machine:
+
+```
+npm install -g firebase-tools
+```
+
+Next is a similar command that has to be run with every project you create:
+
+```
+npm install -D firebase-tools
+```
+
+This installs firebase-tools locally as a dev dependency — but also means you install the dependencies on the build server, and this ensures you can execute the firebase command from circleci.
+
+Before we initialize firebase, we need to create a build for our project, so run:
+
+```
+npm run-script build
+```
+
+![Successful build]()
+
+With that done, head on over to your terminal inside of your desired project directory, and run:
+
+```
+firebase init
+```
+
+This is what you'll see: 
+
+![Firebase in terminal]()
+
+Use your arrow keys to select Hosting and click your space bar to highlight this like so:
+
+![Firebase Hosting Highlighted]()
+
+Hit enter, and then enter again to 'Use an existing project`:
+
+![Firebase use existing project]()
+
+Next, select your desired project: 
+
+![Firebase select project]()
+
+and hit enter. You'll be asked three questions for this point, the answers to which i'll show below:
+
+```
+? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? N
+✔  Wrote build/404.html
+? File build/index.html already exists. Overwrite? N
+```
+
+After entering these answers you'll see: 
+
+![Firebase initialization complete]()
+
+Now to deploy, run: 
+
+```
+firebase deploy
+```
+
+You should see this in the terminal: 
+
+![Deploy complete]()
+
+And if you navigate to your hosting url, you should see: 
+
+![Deployed App]()
+
+And last but not least, lets integrate this all with CircleCI. 
+
+In your terminal, run:
+
+```
+firebase login:ci
+```
+
+![firebase authentication terminal]()
+
+This will launch a browser window, asking you to login and authenticate the use of firebase:
+
+![browser authenticate firebase]()
+
+Upon success, you'll be given a Firebase token: 
+
+![successful authentication firebase token]()
+
+Copy your token to your clipboard, and lets head over to your project's settings in circleci. This will be another environment variable like the one we did previously for Code Climate. 
+
+Click to add a new environment variable and paste your token into the value box. Name your environment variable 'FIREBASE_TOKEN'. 
+
+![Add firebase token as environment variable]()
+
+Click add variable and you should see your token next to your Code Climate test coverage reporter ID: 
+
+![Project environment variables]()
+
+Now that's done, head back over to your project for the final step.
+
+Inside your circle ci folder, bring up your config.yml file and head to the bottom to where our firebase deploy script lives. Uncomment the line:
+
+![uncomment firebase deploy]()
+
+Now commit and push everything to GitHub and lets head over to our project build in circle ci to see it all come together: 
+
