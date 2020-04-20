@@ -1,4 +1,4 @@
-# Tutorial_React_Project_Guide
+# Tutorial - How to setup a React project with create-react-app, Circle CI, Code Climate, and Firebase. 
 
 [![CircleCI](https://circleci.com/gh/BenSheridanEdwards/Tutorial_React_Project_Guide.svg?style=svg)](https://circleci.com/gh/BenSheridanEdwards/Tutorial_React_Project_Guide)
 [![Maintainability](https://api.codeclimate.com/v1/badges/87096c1417a643cd3efd/maintainability)](https://codeclimate.com/github/BenSheridanEdwards/Tutorial_React_Project_Guide/maintainability)
