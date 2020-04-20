@@ -1,4 +1,11 @@
 # Tutorial_React_Project_Guide
+
+[![CircleCI](https://circleci.com/gh/BenSheridanEdwards/Tutorial_React_Project_Guide.svg?style=svg)](https://circleci.com/gh/BenSheridanEdwards/Tutorial_React_Project_Guide)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/87096c1417a643cd3efd/maintainability)](https://codeclimate.com/github/BenSheridanEdwards/Tutorial_React_Project_Guide/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/87096c1417a643cd3efd/test_coverage)](https://codeclimate.com/github/BenSheridanEdwards/Tutorial_React_Project_Guide/test_coverage)
+
 How to build a React application with Jest, Enzyme, CircleCI, Code Climate &amp; Firebase
 
 ## Introduction & running create-react-app
@@ -333,3 +340,44 @@ Inside your circle ci folder, bring up your config.yml file and head to the bott
 
 Now commit and push everything to GitHub and lets head over to our project build in circle ci to see it all come together: 
 
+![success build full integration]()
+
+Success! Everything is integrated! Now you have a React project complete with testing, coverage reporting, continuous integration, and continuous deployment. What you create with this foundation is up to you! 
+
+# Status Badges (Optional)
+
+The next step is optional, but one I love to do after doing all this setup, lets quickly add some status badges!
+
+The first badge is our build badge, head over to your project's settings on CircleCI.com:
+
+![CircleCI project settings]()
+
+Under notifications on the left-hand side bar you'll find 'Status Badges', click on it:
+
+![circleci build badge]()
+
+Copy the markdown code to your clipboard and head to your README, where to paste it is up to you, but I like it at the very top, underneath my project's title:
+
+![Insert build badge inside README]()
+
+Next, we're going to our maintainability and test coverage badges, so head over to your project's setting on CodeClimate.com:
+
+![Code Climate project settings]()
+
+Under extras on the left-hand side bar you'll find 'Badges', click on it:
+
+![Code Climate badges]()
+
+Click the markdown tab for each, and copy both links over to your README, right below your circleci build badge:
+
+![Insert maintainability and coverage badges in README]()
+
+Now commit and push, and head to GitHub to see the fruit of our labours: 
+
+![Badges on README]()
+
+And that's it, now it's time to get building something amazing!
+
+Happy coding!
+
+Ben
