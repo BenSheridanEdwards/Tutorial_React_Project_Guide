@@ -104,7 +104,7 @@ jobs:
       #         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
       #         chmod +x ./cc-test-reporter
       # - run:
-      #       name: Build, Save and Send Coverage Report to Code Climate
+      #       name: Test Coverage and send Coverage Report to Code Climate
       #       command: |
       #         ./cc-test-reporter before-build
       #         npm run test:coverage
