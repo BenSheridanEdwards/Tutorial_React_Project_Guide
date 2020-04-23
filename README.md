@@ -20,13 +20,13 @@ $ git init
 $ npx create-react-app project_name
 ```
 
-![Terminal Screenshot - Running create-react-app]()
+![Terminal Screenshot - Running create-react-app](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/ReactAppSetup/Tutorial-GitInit.png)
 
 Once create-react-app has finished doing it's thing, lets do some folder cleanup (Optional).
 
 I like to just drag my react project up one level to my root repo folder, delete the now empty React project folder, and add my own README to my project.
 
-![Project Screenshot - Completed create-react-app project]()
+![Project Screenshot - Completed create-react-app project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/ReactAppSetup/Tutorial-DeleteCreateReactAppFolder.png)
 
 ## Setting up testing with jest and enzyme
 
@@ -38,12 +38,15 @@ npm install --save-dev jest jest-enzyme enzyme enzyme-adapter-react-16
 
 Next lets setup our `test.js` file. First we'll import our Enzyme shallow wrapper as well as our Enzyme Adapter. Then we'll write a one-line configuration to setup Enzyme with our new adapter. 
 
-![test.js file]()
-*Before and After*
+![test.js file before](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-TestFileBeginning.png)
+*Before*
+
+![test.js file after](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-TestFileSetup.png)
+*After*
 
 You might encounter an issue with the latest version of jest not being compatable with react-scripts, like the one I encountered below: 
 
-![Setup Error - Jest]()
+![Setup Error - Jest](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-NpmTestInitialError.png)
 
 Don't worry, just follow the steps below this error to fix the issue. You'll have to delete your `package-lock.json`, delete jest as a dependency from your `package.json` file, and delete your `node_modules`. Then run `$ npm install`. This will resolve the issue. 
 
@@ -51,11 +54,9 @@ Alternitively, you can create an .env file in your project and add the line `SKI
 
 Next, lets delete the render test and replace it with an empty boilerplate render test. 
 
-![test.js boilerplate]()
+![test.js boilerplate](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-BoilerplateTestFile.png)
 
 Running `$ npm test` at this point should give us one passing test. 
-
-![boilerplate passing test]()
 
 That's it for setting up React with Jest and Enzyme! 
 
