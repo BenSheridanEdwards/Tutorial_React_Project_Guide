@@ -150,17 +150,19 @@ Next we'll setup Code Climate, so circleci sends test coverage reports for our p
 
 First, lets head over to [CodeClimate.com](https://codeclimate.com/) and sign up using GitHub to their quality product if you haven't already. You'll be redirected to your dashboard, that will look like this:
 
-![Code Climate Dashboard]()
+![Code Climate Dashboard](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-CodeClimateFirstPage.png)
 
 Click on 'Open Source', then 'Add a repository', then 'Add repo' next to your desired project. Your project will immediately start building and you should see a success alert like this: 
 
-![Successful First Code Climate Build]()
+![Successful First Code Climate Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-FirstBuildSuccessMessage.png)
 
 Click `See the results`, and you should see a similar page to this:
 
-![Code Climate Build Report]()
+![Code Climate Build Report](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-CodeClimateSetup.png)
 
 Click on the umbrella underneath 'Test Coverage', it'll bring you to a page to help you setup your coverage. Scroll down till you find your test reporter ID, copy it, we'll need it for our next step. 
+
+![](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-Find-CodeClimateProjectSettings.png)
 
 With your test reporter ID copied to your clipboard, head back over to [CircleCi.com](https://circleci.com/) and go into your desire projects overview.
 
@@ -170,15 +172,15 @@ Click on the cog icon next to your project. This will lead you to your settings 
 
 Under build settings, click on 'Environmental Variables'. Then 'Add Variable', a pop up like this should appear: 
 
-![Add environmental variable on CircleCI]()
+![Add environmental variable on CircleCI](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CircleCi-AddEnvVariable.png)
 
 In the value input box, paste your test reporter ID, and name the variable 'CC_TEST_REPORTER_ID'. After it's copied perfectly, click add variable and you'll see your new environment variable listed like so:
 
-![Added test reporter id as environment variable]()
+![Added test reporter id as environment variable](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddedTestReporterIDEnvVariable.png)
 
 Now head back over to your project, and uncomment the scripts 'Setup Code Climate test-reporter' and 'Build, Save and Send Coverage Report to Code Climate': 
 
-![Uncomment code climate scripts]()
+![Uncomment code climate scripts](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-UncommentCodeClimate.png)
 
 Lastly head over to your package.json, there's one final thing we need to do. Between your test and eject scripts, add the following line, followed by a comma: 
 
@@ -202,15 +204,15 @@ and to the bottom of your package.json file:
 
 Your package.json should now look like: 
 
-![Add test:coverage script and jest ignore coverage]()
+![Add test:coverage script and jest ignore coverage](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddScripts-Coverage%26IgnoreCoverage.png)
 
 Now commit and push to GitHub, and head over to your repo on circleci.com to see the magic happen.
 
-![Code Climate integration successful build]()
+![Code Climate integration successful build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-SuccessfulBuildwithSentTestCoverageReport.png)
 
 Success! We're now sending test coverage reports to Code Climate, head back over to your repo on CodeClimate to check how we did: 
 
-![Test Coverage on CodeClimate]()
+![Test Coverage on CodeClimate](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-CodeClimateBuild-WithTestCoverage.png)
 
 A big fat F for test coverage, that sounds about right considering we have one empty test! That's a problem for future you to solve. 
 
