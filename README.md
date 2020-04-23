@@ -66,7 +66,7 @@ Setting up CircleCi is easy once you know how.
 
 First lets create a new folder in our project root folder called '.circleci', then create a file inside called 'config.yml'. These are special names so be sure to copy them. 
 
-![empty config.yml file inside .circleci folder]()
+![empty config.yml file inside .circleci folder](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CreateCircleCIConfigFile.png)
 
 Now lets add build scripts to our config.yml file:
 
@@ -116,27 +116,31 @@ jobs:
       #       description: Run tests with coverage and upload results to code climate          
 ```
 
+![Pasted Config.yml file](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CircleCIConfigFile-RETAKE.png)
+
 Don't worry about the commented out scripts for Code Climate and Firebase, they're for later to make everything work together seemlessly. 
 
 Now is a good time to commit and push up to GitHub, nothing will happen, yet. So for now head over to [CircleCi.com](https://circleci.com/) and create an account or login with Github.
 
 First before we add our project we want to build, head over to your settings, then security, and enable third-party orbs, we'll need to use them later to work with Code Climate and Firebase. 
 
+![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-EnableOrbs.png)
+
 Next, add your desired project by clicking on 'add project' on the left-hand sidebar and clicking 'Setup Project' next to the repo name. 
 
-![Add project on circleci]()
+![Add project on circleci](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddNewProject.png)
 
 ![Set up project on circleci]()
 
 You'll reach this page: 
 
-![circleci project setup]()
+![circleci project setup](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CircleCi-SetupProjectConfig.png)
 
 Click 'start building' then 'add manually' then 'start building' again
 
 Your build should look like this: 
 
-![CircleCI Project First Build]()
+![CircleCI Project First Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-FirstBuildOverview.png)
 
 Next, we'll setup code climate. 
 
