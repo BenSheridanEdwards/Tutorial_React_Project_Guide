@@ -222,19 +222,19 @@ Now lets complete this tutorial with some deployment to FireBase!
 
 First lets head over to Firebase.com, sign up or login with GitHub and when you're redirected to your project console, add your desired project. Easy stuff. 
 
-![Add firebase project]()
+![Add firebase project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-Firebase-ProjectSetup-Start.png)
 
 You'll then be asked to name your project:
 
-![Name firebase project]()
+![Name firebase project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-Firebase-ProjectSetup-Naming.png)
 
 Then you can choose to add google analystics to your project, this is optional either way, I choose yet in case I want to see how my app is doing in the future. 
 
-![Google Analytics Option]()
+![Google Analytics Option](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-AddProject-ConfigAnalytics.png)
 
 After a few seconds of waiting, your project will be ready:
 
-![Firebase project ready]()
+![Firebase project ready](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-Firebase-AddProject-Done.png)
 
 Next, head to your terminal inside your react project, you need to run two very similar commands, but trust me, all will be explained. 
 
@@ -258,7 +258,7 @@ Before we initialize firebase, we need to create a build for our project, so run
 npm run-script build
 ```
 
-![Successful build]()
+![Successful build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/ReactAppSetup/Tutorial-NPM-Build.png)
 
 With that done, head on over to your terminal inside of your desired project directory, and run:
 
@@ -268,19 +268,19 @@ firebase init
 
 This is what you'll see: 
 
-![Firebase in terminal]()
+![Firebase in terminal](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseInitialize.png)
 
 Use your arrow keys to select Hosting and click your space bar to highlight this like so:
 
-![Firebase Hosting Highlighted]()
+![Firebase Hosting Highlighted](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseHostingSetup.png)
 
 Hit enter, and then enter again to 'Use an existing project`:
 
-![Firebase use existing project]()
+![Firebase use existing project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseProjectSetup.png)
 
 Next, select your desired project: 
 
-![Firebase select project]()
+![Firebase select project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseChooseProject.png)
 
 and hit enter. You'll be asked three questions for this point, the answers to which i'll show below:
 
@@ -293,7 +293,7 @@ and hit enter. You'll be asked three questions for this point, the answers to wh
 
 After entering these answers you'll see: 
 
-![Firebase initialization complete]()
+![Firebase initialization complete](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseHostingSetup.png)
 
 Now to deploy, run: 
 
@@ -303,11 +303,11 @@ firebase deploy
 
 You should see this in the terminal: 
 
-![Deploy complete]()
+![Deploy complete](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseDeployFromCommandLine.png)
 
 And if you navigate to your hosting url, you should see: 
 
-![Deployed App]()
+![Deployed App](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-SuccessfulCommandLineDeploy.png)
 
 And last but not least, lets integrate this all with CircleCI. 
 
@@ -317,31 +317,31 @@ In your terminal, run:
 firebase login:ci
 ```
 
-![firebase authentication terminal]()
+![firebase authentication terminal](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseWaitingForAuth.png)
 
 This will launch a browser window, asking you to login and authenticate the use of firebase:
 
-![browser authenticate firebase]()
+![browser authenticate firebase](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseWaitingForAuth.png)
 
 Upon success, you'll be given a Firebase token: 
 
-![successful authentication firebase token]()
+![successful authentication firebase token](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-ObtainFirebaseTokenFromCommandLine.png)
 
 Copy your token to your clipboard, and lets head over to your project's settings in circleci. This will be another environment variable like the one we did previously for Code Climate. 
 
 Click to add a new environment variable and paste your token into the value box. Name your environment variable 'FIREBASE_TOKEN'. 
 
-![Add firebase token as environment variable]()
+![Add firebase token as environment variable](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddFirebaseTokentoCircleCi.png)
 
 Click add variable and you should see your token next to your Code Climate test coverage reporter ID: 
 
-![Project environment variables]()
+![Project environment variables](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-BothEnvironmentalVariablesAdded.png)
 
 Now that's done, head back over to your project for the final step.
 
 Inside your circle ci folder, bring up your config.yml file and head to the bottom to where our firebase deploy script lives. Uncomment the line:
 
-![uncomment firebase deploy]()
+![uncomment firebase deploy](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-UncommentFirebaseScript.png)
 
 Now commit and push everything to GitHub and lets head over to our project build in circle ci to see it all come together: 
 
@@ -359,27 +359,29 @@ The first badge is our build badge, head over to your project's settings on Circ
 
 Under notifications on the left-hand side bar you'll find 'Status Badges', click on it:
 
-![circleci build badge]()
+![circleci build badge](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-CopyCircleCIBuildStatusBadge.png)
 
 Copy the markdown code to your clipboard and head to your README, where to paste it is up to you, but I like it at the very top, underneath my project's title:
 
-![Insert build badge inside README]()
+![Insert build badge inside README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-AddCircleCIBuildStatusBadge.png)
 
 Next, we're going to our maintainability and test coverage badges, so head over to your project's setting on CodeClimate.com:
 
-![Code Climate project settings]()
+![Code Climate project settings](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-Find-CodeClimateProjectSettings.png)
 
 Under extras on the left-hand side bar you'll find 'Badges', click on it:
 
-![Code Climate badges]()
+![Code Climate badges](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-CodeClimateStatusBadges.png)
 
 Click the markdown tab for each, and copy both links over to your README, right below your circleci build badge:
 
-![Insert maintainability and coverage badges in README]()
+![Insert maintainability and coverage badges in README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-AddStatusBadges.png)
 
 Now commit and push, and head to GitHub to see the fruit of our labours: 
 
-![Badges on README]()
+![Badges on README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-StatusBadgesImplemented.png)
+
+
 
 And that's it, now it's time to get building something amazing!
 
