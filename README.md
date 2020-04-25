@@ -13,7 +13,7 @@ How to build a React application with Jest, Enzyme, CircleCI, Code Climate &amp;
 4. [Common Jest Error when running npm test]() <br>
 5. [Tests Passing]() <br>
 
-### [CircleCI](#circleci)
+### [CircleCI](#circleci-header)
 1. [Create your .circleci folder and config file]() <br>
 2. [Enable third-party orbs in your project settings]() <br>
 3. [Create your configuation file inside a new .circleci folder]() <br>
@@ -157,7 +157,7 @@ Running `$ npm test` at this point should give us one passing test.
 
 That's it for setting up React with Jest and Enzyme! 
 
-## <a name="circleci">CircleCI</a>
+## <a name="circleci-header">CircleCI</a>
 
 ### 1. Sign up to Circleci with GitHub and add your project
 
