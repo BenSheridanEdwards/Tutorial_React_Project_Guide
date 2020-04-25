@@ -28,18 +28,93 @@ I like to just drag my react project up one level to my root repo folder, delete
 
 ![Project Screenshot - Completed create-react-app project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/ReactAppSetup/Tutorial-DeleteCreateReactAppFolder.png)
 
+Next lets head over to our package.json. Between your test and eject scripts, add the following line, followed by a comma: 
+
+```
+"test:coverage": "set CI=true && react-scripts test --coverage",
+```
+
+and to the bottom of your package.json file, add:
+
+```
+ "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/serviceWorker.js",
+      "!**/index.js"
+    ]
+  }
+```
+
+Your package.json should now look like this: 
+
+![Add test:coverage script and jest ignore coverage](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddScripts-Coverage%26IgnoreCoverage.png)
+
 ## Setting up testing with jest and enzyme
 
-Now that's done, lets install enzyme and the adapters needed to make it work with jest, as jest is already installed with create-react-app:
+### Installing our dependancies
+
+Now that's done, lets install enzyme and the adapters needed to make it work with jest, which is already installed with create-react-app by default:
 
 ```
 npm install --save-dev jest jest-enzyme enzyme enzyme-adapter-react-16
 ```
 
-Next lets setup our `test.js` file. First we'll import our Enzyme shallow wrapper as well as our Enzyme Adapter. Then we'll write a one-line configuration to setup Enzyme with our new adapter. 
+### Setting up our testing suite
 
-![test.js file before](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-TestFileBeginning.png)
-*Before*
+Next lets setup our `App.js` & `App.test.js` file. First we'll import our Enzyme shallow wrapper as well as our Enzyme Adapter. We'll write a one-line configuration to setup Enzyme with our new adapter. If you clear the test contents it should still pass, but your coverage will be 0%:
+
+*In App.test.js, add:*
+```
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+import EnzymeAdapter from 'enzyme-adapter-react-16'
+
+import App from './App';
+
+Enzyme.configure({ adapter: new EnzymeAdapter() })
+```
+
+### Optional, setup a App render test to get 100% test coverage from the first build.
+
+It's optional but if you want 100% test coverage, you can do a simple render test on your App component. To do so just copy the code below into the respective App.js and App.test.js files: 
+
+*In App.test.js, add:*
+```
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+import EnzymeAdapter from 'enzyme-adapter-react-16'
+
+import App from './App';
+
+Enzyme.configure({ adapter: new EnzymeAdapter() })
+
+const setup = (props={}, state=null) => {
+  const wrapper = shallow(<App {...props} />)
+  if (state) wrapper.setState(state)
+    return wrapper;
+}
+
+const findByTestAttr = (wrapper, val) => {
+  return wrapper.find(`[data-test="${val}"]`)
+}
+
+it('renders without error', () =>{
+  const wrapper = setup();
+  const appComponent = findByTestAttr(wrapper, 'component-app');
+  expect(appComponent.length).toBe(1);
+});
+```
+
+It should now look like this: 
+
+![App.test.js full render test]()
+
+*and in App.js, insert `data-test="component-app"` into your top level <div> element*
+  
+![App.js add data-test attribute]()
 
 ![test.js file after](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-TestFileSetup.png)
 *After*
@@ -48,13 +123,14 @@ You might encounter an issue with the latest version of jest not being compatabl
 
 ![Setup Error - Jest](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-NpmTestInitialError.png)
 
-Don't worry, just follow the steps below this error to fix the issue. You'll have to delete your `package-lock.json`, delete jest as a dependency from your `package.json` file, and delete your `node_modules`. Then run `$ npm install`. This will resolve the issue. 
+Don't worry, here are the steps to solve the issue:
+1. Delete your `package-lock.json` file and your `node_modules` folder. 
+2. Delete jest as a dependency from your `package.json` file.
+3. Then run `$ npm install`. This will resolve the issue. 
 
-Alternitively, you can create an .env file in your project and add the line `SKIP_PREFLIGHT_CHECK=true` which ignores the warning and your jest remains at the latest version.
+Alternitively, you could quickly create .env file in the root folder of your project and add the line `SKIP_PREFLIGHT_CHECK=true`, which will tell your project you to ignore warnings of this kind in the future.
 
-Next, lets delete the render test and replace it with an empty boilerplate render test. 
-
-![test.js boilerplate](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-BoilerplateTestFile.png)
+### Running our Tests
 
 Running `$ npm test` at this point should give us one passing test. 
 
@@ -181,30 +257,6 @@ In the value input box, paste your test reporter ID, and name the variable 'CC_T
 Now head back over to your project, and uncomment the scripts 'Setup Code Climate test-reporter' and 'Build, Save and Send Coverage Report to Code Climate': 
 
 ![Uncomment code climate scripts](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-UncommentCodeClimate.png)
-
-Lastly head over to your package.json, there's one final thing we need to do. Between your test and eject scripts, add the following line, followed by a comma: 
-
-```
-"test:coverage": "set CI=true && react-scripts test --coverage",
-```
-
-and to the bottom of your package.json file:
-
-```
- "jest": {
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/coverage/**",
-      "!**/serviceWorker.js",
-      "!**/index.js"
-    ]
-  }
-```
-
-Your package.json should now look like: 
-
-![Add test:coverage script and jest ignore coverage](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddScripts-Coverage%26IgnoreCoverage.png)
 
 Now commit and push to GitHub, and head over to your repo on circleci.com to see the magic happen.
 
