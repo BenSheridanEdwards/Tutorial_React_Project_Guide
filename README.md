@@ -7,15 +7,15 @@
 How to build a React application with Jest, Enzyme, CircleCI, Code Climate &amp; Firebase
 
 ### [Testing with Jest & Enzyme](#testing)
-1. [Installing Dependancies]() <br>
-2. [Setting up your App.test.js file]() <br>
-3. [100% Coverage from your first test]() <br>
-4. [Common Jest Error when running npm test]() <br>
-5. [Tests Passing]() <br>
+1. [Installing Dependancies](#1-installing-our-dependancies) <br>
+2. [Setting up your App.test.js file](#2-setting-up-your-app.test.js-file) <br>
+3. [100% Coverage from your first test (Optional)](#3-100%-Coverage-from-your-first-test) <br>
+4. [Common Jest Error when running npm test](#4-common-jest-error) <br>
+5. [Tests Passing](#5-tests-passing) <br>
 
 ### [CircleCI](#circleci-header)
-1. [Create your .circleci folder and config file]() <br>
-2. [Enable third-party orbs in your project settings]() <br>
+1. [Sign up to Circleci with GitHub and add your repo](#1-sign-up-for-circleci) <br>
+2. [Enable third-party orbs in your project settings](#2-enable-third-party-orbs) <br>
 3. [Create your configuation file inside a new .circleci folder]() <br>
 4. [Copy & Paste Build Scripts]() <br>
 5. [First Successful Build]() <br>
@@ -73,7 +73,7 @@ Your package.json should now look like this:
 
 ## <a name="testing">Setting up testing with jest and enzyme</a>
 
-### Installing our dependancies
+### <a name="1-installing-our-dependancies">1. Installing our dependancies</a>
 
 Now that's done, lets install enzyme and the adapters needed to make it work with jest, which is already installed with create-react-app by default:
 
@@ -81,9 +81,9 @@ Now that's done, lets install enzyme and the adapters needed to make it work wit
 npm install --save-dev jest jest-enzyme enzyme enzyme-adapter-react-16
 ```
 
-### Setting up our testing suite
+### <a name="2-setting-up-your-app.test.js-file">2. Setting up your App.test.js file</a>
 
-Next lets setup our `App.js` & `App.test.js` file. First we'll import our Enzyme shallow wrapper as well as our Enzyme Adapter. We'll write a one-line configuration to setup Enzyme with our new adapter. If you clear the test contents it should still pass, but your coverage will be 0%:
+Next lets setup our `App.test.js` file. We'll import our Enzyme shallow wrapper as well as our Enzyme Adapter. We'll write a one-line configuration to setup Enzyme with our new adapter. If you clear the test contents it should still pass, but your coverage will be 0%:
 
 *In App.test.js, add:*
 ```
@@ -96,7 +96,7 @@ import App from './App';
 Enzyme.configure({ adapter: new EnzymeAdapter() })
 ```
 
-### Optional, setup a App render test to get 100% test coverage from the first build.
+### <a name="3-100%-Coverage-from-your-first-test">3. Setup a App render test to get 100% test coverage from the first build  (Optional)</a>
 
 It's optional but if you want 100% test coverage, you can do a simple render test on your App component. To do so just copy the code below into the respective App.js and App.test.js files: 
 
@@ -138,7 +138,7 @@ It should now look like this:
 ![test.js file after](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-TestFileSetup.png)
 *After*
 
-# Common Jest Error
+### <a name="4-common-jest-error">4. Common Jest Error</a>
 
 You might encounter an issue with the latest version of jest not being compatable with react-scripts, like the one I encountered below: 
 
@@ -151,7 +151,7 @@ Don't worry, here are the steps to solve the issue:
 
 Alternitively, you could quickly create .env file in the root folder of your project and add the line `SKIP_PREFLIGHT_CHECK=true`, which will tell your project you to ignore warnings of this kind in the future.
 
-### Running our Tests
+### <a name="5-running-our-tests">5. Running our Tests</a>
 
 Running `$ npm test` at this point should give us one passing test. 
 
@@ -159,7 +159,7 @@ That's it for setting up React with Jest and Enzyme!
 
 ## <a name="circleci-header">CircleCI</a>
 
-### 1. Sign up to Circleci with GitHub and add your project
+### <a name="1-sign-up-for-circleci">1. Sign up to Circleci with GitHub and add your project</a>
 
 First, head over to [Circleci.com](https://circleci.com/) and login or create an account with GitHub, then add your project repo:
 
@@ -173,7 +173,7 @@ You'll reach this page:
 
 Click 'start building' then 'add manually' then 'start building' again, this will trigger an initial build.
 
-### 2. Enable third-party orbs in your project settings
+### <a name="#2-enable-third-party-orbs">2. Enable third-party orbs in your project settings</a>
 
 ![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-EnableOrbs.png)
 
