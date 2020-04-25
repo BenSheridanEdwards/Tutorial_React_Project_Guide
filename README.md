@@ -6,6 +6,25 @@
 
 How to build a React application with Jest, Enzyme, CircleCI, Code Climate &amp; Firebase
 
+### [Testing with Jest & Enzyme](#testing)
+1. [Installing Dependancies]() <br>
+2. [Setting up your App.test.js file]() <br>
+3. [100% Coverage from your first test]() <br>
+4. [Common Jest Error when running npm test]() <br>
+5. [Tests Passing]() <br>
+
+### [CircleCI](#circleci)
+1. [Create your .circleci folder and config file]() <br>
+2. [Enable third-party orbs in your project settings]() <br>
+3. [Create your configuation file inside a new .circleci folder]() <br>
+4. [Copy & Paste Build Scripts]() <br>
+5. [First Successful Build]() <br>
+
+### [Code Climate](#code-climate)
+### [Firebase](#firebase)
+### [Putting it all together](#together)
+### [Fun Extra: Status Badges](#badges)
+
 ## Introduction & running create-react-app
 
 In this tutorial, I'm going to walk through how to setup a React project from create-react-app with testing using Jest and Enzyme, install check-props and check-prop-types as dependencies so we can test props, then create continuous integration and deployment with CircleCI and Firebase. In my circleci configuation, I'll be adding in some Code Climate setup so we can add badass badges to every project.
@@ -52,7 +71,7 @@ Your package.json should now look like this:
 
 ![Add test:coverage script and jest ignore coverage](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddScripts-Coverage%26IgnoreCoverage.png)
 
-## Setting up testing with jest and enzyme
+## <a name="testing">Setting up testing with jest and enzyme</a>
 
 ### Installing our dependancies
 
@@ -119,6 +138,8 @@ It should now look like this:
 ![test.js file after](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-TestFileSetup.png)
 *After*
 
+# Common Jest Error
+
 You might encounter an issue with the latest version of jest not being compatable with react-scripts, like the one I encountered below: 
 
 ![Setup Error - Jest](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-NpmTestInitialError.png)
@@ -136,13 +157,35 @@ Running `$ npm test` at this point should give us one passing test.
 
 That's it for setting up React with Jest and Enzyme! 
 
-## CircleCI
+## <a name="circleci">CircleCI</a>
 
-Setting up CircleCi is easy once you know how. 
+### 1. Sign up to Circleci with GitHub and add your project
 
-First lets create a new folder in our project root folder called '.circleci', then create a file inside called 'config.yml'. These are special names so be sure to copy them. 
+First, head over to [Circleci.com](https://circleci.com/) and login or create an account with GitHub, then add your project repo:
+
+![Add project on circleci](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddNewProject.png)
+
+![Gif - Sign up to CircleCI, Set up Project]()
+
+You'll reach this page: 
+
+![circleci project setup](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CircleCi-SetupProjectConfig.png)
+
+Click 'start building' then 'add manually' then 'start building' again, this will trigger an initial build.
+
+### 2. Enable third-party orbs in your project settings
+
+![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-EnableOrbs.png)
+
+We'll need to use them later to work with Code Climate and Firebase seamlessly.
+
+### 3. Create your configuation file inside a new .circleci folder
+
+First lets create a new folder in our project root folder called '.circleci', then create a file inside that called 'config.yml'. These are special names so be sure to copy them exactly. 
 
 ![empty config.yml file inside .circleci folder](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CreateCircleCIConfigFile.png)
+
+### 4. Copy & Paste Build Scripts
 
 Now lets add build scripts to our config.yml file:
 
@@ -196,31 +239,15 @@ jobs:
 
 Don't worry about the commented out scripts for Code Climate and Firebase, they're for later to make everything work together seemlessly. 
 
-Now is a good time to commit and push up to GitHub, nothing will happen, yet. So for now head over to [CircleCi.com](https://circleci.com/) and create an account or login with Github.
+### 5. First Successful Build
 
-First before we add our project we want to build, head over to your settings, then security, and enable third-party orbs, we'll need to use them later to work with Code Climate and Firebase. 
-
-![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-EnableOrbs.png)
-
-Next, add your desired project by clicking on 'add project' on the left-hand sidebar and clicking 'Setup Project' next to the repo name. 
-
-![Add project on circleci](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddNewProject.png)
-
-![Set up project on circleci]()
-
-You'll reach this page: 
-
-![circleci project setup](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CircleCi-SetupProjectConfig.png)
-
-Click 'start building' then 'add manually' then 'start building' again
-
-Your build should look like this: 
+Now commit and push to GitHub. Head over to [CircleCi]() to see your first build, it should look like this: 
 
 ![CircleCI Project First Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-FirstBuildOverview.png)
 
-Next, we'll setup code climate. 
+All green bliss, now, onto code climate!
 
-# Code Climate 
+## <a name="code-climate">Code Climate</a>
 
 Next we'll setup Code Climate, so circleci sends test coverage reports for our project. 
 
