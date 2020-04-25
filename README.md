@@ -11,14 +11,14 @@ How to build a React application with Jest, Enzyme, CircleCI, Code Climate &amp;
 2. [Setting up your App.test.js file](#2-setting-up-your-app.test.js-file) <br>
 3. [100% Coverage from your first test (Optional)](#3-100%-Coverage-from-your-first-test) <br>
 4. [Common Jest Error when running npm test](#4-common-jest-error) <br>
-5. [Tests Passing](#5-tests-passing) <br>
+5. [Tests Passing](#5-running-our-tests) <br>
 
 ### [CircleCI](#circleci-header)
 1. [Sign up to Circleci with GitHub and add your repo](#1-sign-up-for-circleci) <br>
 2. [Enable third-party orbs in your project settings](#2-enable-third-party-orbs) <br>
-3. [Create your configuation file inside a new .circleci folder]() <br>
-4. [Copy & Paste Build Scripts]() <br>
-5. [First Successful Build]() <br>
+3. [Create your configuation file inside a new .circleci folder](#3-create-config-file) <br>
+4. [Copy & Paste Build Scripts](#4-copy-paste-build-scripts) <br>
+5. [First Successful Build](#5-first-successful-build) <br>
 
 ### [Code Climate](#code-climate)
 ### [Firebase](#firebase)
@@ -173,19 +173,19 @@ You'll reach this page:
 
 Click 'start building' then 'add manually' then 'start building' again, this will trigger an initial build.
 
-### <a name="#2-enable-third-party-orbs">2. Enable third-party orbs in your project settings</a>
+### <a name="2-enable-third-party-orbs">2. Enable third-party orbs in your project settings</a>
 
 ![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-EnableOrbs.png)
 
 We'll need to use them later to work with Code Climate and Firebase seamlessly.
 
-### 3. Create your configuation file inside a new .circleci folder
+### <a name="3-create-config-file">3. Create your configuation file inside a new .circleci folder</a>
 
 First lets create a new folder in our project root folder called '.circleci', then create a file inside that called 'config.yml'. These are special names so be sure to copy them exactly. 
 
 ![empty config.yml file inside .circleci folder](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CreateCircleCIConfigFile.png)
 
-### 4. Copy & Paste Build Scripts
+### <a name="4-copy-paste-build-scripts">4. Copy & Paste Build Scripts</a>
 
 Now lets add build scripts to our config.yml file:
 
@@ -239,7 +239,7 @@ jobs:
 
 Don't worry about the commented out scripts for Code Climate and Firebase, they're for later to make everything work together seemlessly. 
 
-### 5. First Successful Build
+### <a name="5-first-successful-build">5. First Successful Build</a>
 
 Now commit and push to GitHub. Head over to [CircleCi]() to see your first build, it should look like this: 
 
