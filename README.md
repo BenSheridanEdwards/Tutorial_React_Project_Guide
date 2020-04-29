@@ -9,7 +9,7 @@ How to build a React application with Jest, Enzyme, CircleCI, Code Climate &amp;
 ### [Testing with Jest & Enzyme](#testing)
 1. [Installing Dependancies](#1-installing-our-dependancies) <br>
 2. [Setting up your App.test.js file](#2-setting-up-your-app.test.js-file) <br>
-3. [100% Coverage from your first test (Optional)](#100%-Coverage-from-your-first-test) <br>
+3. [100% Coverage from your first test (Optional)](#3-100%-Coverage-from-your-first-test) <br>
 4. [Common Jest Error when running npm test](#4-common-jest-error) <br>
 5. [Tests Passing](#5-running-our-tests) <br>
 
