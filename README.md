@@ -96,7 +96,7 @@ import App from './App';
 Enzyme.configure({ adapter: new EnzymeAdapter() })
 ```
 
-### <a name="100%-Coverage-from-your-first-test">3. Setup a App render test to get 100% test coverage from the first build  (Optional)</a>
+### <a name="3-100%-Coverage-from-your-first-test">3. Setup a App render test to get 100% test coverage from the first build  (Optional)</a>
 
 It's optional but if you want 100% test coverage, you can do a simple render test on your App component. To do so just copy the code below into the respective App.js and App.test.js files: 
 
