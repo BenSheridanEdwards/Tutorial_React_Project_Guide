@@ -9,7 +9,7 @@ How to build a React application with Jest, Enzyme, CircleCI, Code Climate &amp;
 ### [Testing with Jest & Enzyme](#testing)
 1. [Installing Dependancies](#1-installing-our-dependancies) <br>
 2. [Setting up your App.test.js file](#2-setting-up-your-app.test.js-file) <br>
-3. [100% Test Coverage from the start (Optional)](#3-100%-Coverage-from-your-first-test) <br>
+3. [100% Test Coverage from the start (Optional)](#3-coverage-from-your-first-build) <br>
 4. [Common Jest Error when running npm test](#4-common-jest-error) <br>
 5. [Tests Passing](#5-running-our-tests) <br>
 
@@ -96,7 +96,8 @@ import App from './App';
 Enzyme.configure({ adapter: new EnzymeAdapter() })
 ```
 
-### <a name="3-100%-Coverage-from-your-first-test">3. Setup a App render test to get 100% test coverage from the first build  (Optional)</a>
+### <a name="3-coverage-from-your-first-build">3. 100% Test coverage from the first build</a>
+<a name="3-coverage-from-your-first-build"></a>
 
 It's optional but if you want 100% test coverage, you can do a simple render test on your App component. To do so just copy the code below into the respective App.js and App.test.js files: 
 
