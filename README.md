@@ -246,11 +246,11 @@ All green bliss, now one last step before we move onto Code Climate.
 
 ### <a name="5-enable-third-party-orbs">5. Enable third-party orbs in your project settings</a>
 
-Head over to your project settings, set third-party orbs to 'on'.
+Head over to your project settings, opt-in to third-party orbs.
 
 ![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-EnableOrbs.png)
 
-We'll need to use them later to work with Code Climate and Firebase seamlessly.
+We'll use orbs later to enable CircleCi to work with Code Climate and Firebase seamlessly.
 
 ## <a name="code-climate">Code Climate</a>
 
