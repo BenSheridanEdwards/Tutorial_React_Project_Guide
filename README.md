@@ -220,6 +220,8 @@ jobs:
 
 Don't worry about the commented out scripts for the test coverage reporting and deployment, we'll be uncommenting them later to make everything work together seemlessly with Code Climate and Firebase respectively. 
 
+Now commit and push to GitHub. Next we'll setup our project with CircleCi.
+
 ### <a name="3-sign-up-for-circleci">3. Sign up to Circleci with GitHub and add your project</a>
 
 Next, head over to [Circleci.com](https://circleci.com/) and login or create an account with GitHub, then add your project repo:
@@ -234,19 +236,21 @@ You'll reach this page:
 
 Click 'start building' then 'add manually' then 'start building' again, this will trigger an initial build.
 
-### <a name="4-enable-third-party-orbs">4. Enable third-party orbs in your project settings</a>
+### <a name="4-first-successful-build">4. First Successful Build</a>
+
+Your first build should trigger automatically, and should look like this: 
+
+![CircleCI Project First Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-FirstBuildOverview.png)
+
+All green bliss, now one last step before we move onto Code Climate. 
+
+### <a name="5-enable-third-party-orbs">5. Enable third-party orbs in your project settings</a>
+
+Head over to your project settings, set third-party orbs to 'on'.
 
 ![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-EnableOrbs.png)
 
 We'll need to use them later to work with Code Climate and Firebase seamlessly.
-
-### <a name="5-first-successful-build">5. First Successful Build</a>
-
-Now commit and push to GitHub. Head over to [CircleCi]() to see your first build, it should look like this: 
-
-![CircleCI Project First Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-FirstBuildOverview.png)
-
-All green bliss, now, onto code climate!
 
 ## <a name="code-climate">Code Climate</a>
 
