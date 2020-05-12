@@ -276,7 +276,7 @@ With your test reporter ID copied to your clipboard, head back over to [CircleCi
 
 Click on the cog icon next to your project. This will lead you to your settings for the project: 
 
-![Project settings on CircleCi]()
+![Project settings on CircleCi](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-CircleCI-ProjectSettings.png)
 
 Under build settings, click on 'Environmental Variables'. Then 'Add Variable', a pop up like this should appear: 
 
