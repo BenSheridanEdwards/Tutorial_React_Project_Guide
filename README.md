@@ -439,7 +439,7 @@ The next step is optional, but one I love to do after doing all this setup, lets
 
 The first badge is our build badge, head over to your project's settings on CircleCI.com:
 
-![CircleCI project settings]()
+![CircleCI project settings](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-CircleCI-ProjectSettings.png)
 
 Under notifications on the left-hand side bar you'll find 'Status Badges', click on it:
 
