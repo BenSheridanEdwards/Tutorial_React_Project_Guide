@@ -298,7 +298,7 @@ Success! We're now sending test coverage reports to Code Climate, head back over
 
 ![Test Coverage on CodeClimate](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CodeClimate/Tutorial-CodeClimateBuild-WithTestCoverage.png)
 
-A big fat F for test coverage, that sounds about right considering we have one empty test! That's a problem for future you to solve. 
+100% Test coverage, perfect! 
 
 Now lets complete this tutorial with some deployment to FireBase! 
 
