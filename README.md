@@ -39,13 +39,13 @@ $ git init
 $ npx create-react-app project_name
 ```
 
-![Terminal Screenshot - Running create-react-app](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/ReactAppSetup/Tutorial-GitInit.png)
+![Terminal Screenshot - Running create-react-app](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/ReactAppSetup/Tutorial-GitInit.png)
 
 Once create-react-app has finished doing it's thing, lets do some folder cleanup (Optional).
 
 I like to just drag my react project up one level to my root repo folder, delete the now empty React project folder, and add my own README to my project.
 
-![Project Screenshot - Completed create-react-app project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/ReactAppSetup/Tutorial-DeleteCreateReactAppFolder.png)
+![Project Screenshot - Completed create-react-app project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/ReactAppSetup/Tutorial-DeleteCreateReactAppFolder.png)
 
 Next lets head over to our package.json. Between your test and eject scripts, add the following line, followed by a comma: 
 
@@ -69,7 +69,7 @@ and to the bottom of your package.json file, add:
 
 Your package.json should now look like this: 
 
-![Add test:coverage script and jest ignore coverage](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddScripts-Coverage%26IgnoreCoverage.png)
+![Add test:coverage script and jest ignore coverage](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-AddScripts-Coverage%26IgnoreCoverage.png)
 
 ## <a name="testing">Setting up testing with jest and enzyme</a>
 
@@ -136,14 +136,14 @@ It should now look like this:
   
 ![App.js add data-test attribute]()
 
-![test.js file after](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-TestFileSetup.png)
+![test.js file after](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Testing/Tutorial-TestFileSetup.png)
 *After*
 
 ### <a name="4-common-jest-error">4. Common Jest Error</a>
 
 You might encounter an issue with the latest version of jest not being compatable with react-scripts, like the one I encountered below: 
 
-![Setup Error - Jest](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Testing/Tutorial-NpmTestInitialError.png)
+![Setup Error - Jest](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Testing/Tutorial-NpmTestInitialError.png)
 
 Don't worry, here are the steps to solve the issue:
 1. Delete your `package-lock.json` file and your `node_modules` folder. 
@@ -164,7 +164,7 @@ That's it for setting up React with Jest and Enzyme!
 
 First lets create a new folder in our project root folder called '.circleci', then create a file inside that called 'config.yml'. These are special names so be sure to copy them exactly. 
 
-![empty config.yml file inside .circleci folder](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CreateCircleCIConfigFile.png)
+![empty config.yml file inside .circleci folder](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-CreateCircleCIConfigFile.png)
 
 ### <a name="2-copy-paste-build-scripts">2. Copy & Paste Build Scripts</a>
 
@@ -216,7 +216,7 @@ jobs:
       #       description: Run tests with coverage and upload results to code climate          
 ```
 
-![Pasted Config.yml file](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CircleCIConfigFile-RETAKE.png)
+![Pasted Config.yml file](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-CircleCIConfigFile-RETAKE.png)
 
 Don't worry about the commented out scripts for the test coverage reporting and deployment, we'll be uncommenting them later to make everything work together seemlessly with Code Climate and Firebase respectively. 
 
@@ -226,13 +226,13 @@ Now commit and push to GitHub. Next we'll setup our project with CircleCi.
 
 Next, head over to [Circleci.com](https://circleci.com/) and login or create an account with GitHub, then add your project repo:
 
-![Add project on circleci](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddNewProject.png)
+![Add project on circleci](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-AddNewProject.png)
 
 ![Gif - Sign up to CircleCI, Set up Project]()
 
 You'll reach this page: 
 
-![circleci project setup](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CircleCi-SetupProjectConfig.png)
+![circleci project setup](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-CircleCi-SetupProjectConfig.png)
 
 Click 'start building' then 'add manually' then 'start building' again, this will trigger an initial build.
 
@@ -240,7 +240,7 @@ Click 'start building' then 'add manually' then 'start building' again, this wil
 
 Your first build should trigger automatically, and should look like this: 
 
-![CircleCI Project First Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-FirstBuildOverview.png)
+![CircleCI Project First Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-FirstBuildOverview.png)
 
 All green bliss, now one last step before we move onto Code Climate. 
 
@@ -248,7 +248,7 @@ All green bliss, now one last step before we move onto Code Climate.
 
 Head over to your project settings, opt-in to third-party orbs.
 
-![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-EnableOrbs.png)
+![Enable Third-Party Orbs](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-EnableOrbs.png)
 
 We'll use orbs later to enable CircleCi to work with Code Climate and Firebase seamlessly.
 
@@ -258,19 +258,19 @@ Next we'll setup Code Climate, so circleci sends test coverage reports for our p
 
 First, lets head over to [CodeClimate.com](https://codeclimate.com/) and sign up using GitHub to their quality product if you haven't already. You'll be redirected to your dashboard, that will look like this:
 
-![Code Climate Dashboard](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-CodeClimateFirstPage.png)
+![Code Climate Dashboard](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CodeClimate/Tutorial-CodeClimateFirstPage.png)
 
 Click on 'Open Source', then 'Add a repository', then 'Add repo' next to your desired project. Your project will immediately start building and you should see a success alert like this: 
 
-![Successful First Code Climate Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-FirstBuildSuccessMessage.png)
+![Successful First Code Climate Build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CodeClimate/Tutorial-FirstBuildSuccessMessage.png)
 
 Click `See the results`, and you should see a similar page to this:
 
-![Code Climate Build Report](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-CodeClimateSetup.png)
+![Code Climate Build Report](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CodeClimate/Tutorial-CodeClimateSetup.png)
 
 Click on the umbrella underneath 'Test Coverage', it'll bring you to a page to help you setup your coverage. Scroll down till you find your test reporter ID, copy it, we'll need it for our next step. 
 
-![](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-Find-CodeClimateProjectSettings.png)
+![](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CodeClimate/Tutorial-Find-CodeClimateProjectSettings.png)
 
 With your test reporter ID copied to your clipboard, head back over to [CircleCi.com](https://circleci.com/) and go into your desire projects overview.
 
@@ -280,23 +280,23 @@ Click on the cog icon next to your project. This will lead you to your settings 
 
 Under build settings, click on 'Environmental Variables'. Then 'Add Variable', a pop up like this should appear: 
 
-![Add environmental variable on CircleCI](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-CircleCi-AddEnvVariable.png)
+![Add environmental variable on CircleCI](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-CircleCi-AddEnvVariable.png)
 
 In the value input box, paste your test reporter ID, and name the variable 'CC_TEST_REPORTER_ID'. After it's copied perfectly, click add variable and you'll see your new environment variable listed like so:
 
-![Added test reporter id as environment variable](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddedTestReporterIDEnvVariable.png)
+![Added test reporter id as environment variable](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-AddedTestReporterIDEnvVariable.png)
 
 Now head back over to your project, and uncomment the scripts 'Setup Code Climate test-reporter' and 'Build, Save and Send Coverage Report to Code Climate': 
 
-![Uncomment code climate scripts](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-UncommentCodeClimate.png)
+![Uncomment code climate scripts](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-UncommentCodeClimate.png)
 
 Now commit and push to GitHub, and head over to your repo on circleci.com to see the magic happen.
 
-![Code Climate integration successful build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-SuccessfulBuildwithSentTestCoverageReport.png)
+![Code Climate integration successful build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-SuccessfulBuildwithSentTestCoverageReport.png)
 
 Success! We're now sending test coverage reports to Code Climate, head back over to your repo on CodeClimate to check how we did: 
 
-![Test Coverage on CodeClimate](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-CodeClimateBuild-WithTestCoverage.png)
+![Test Coverage on CodeClimate](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CodeClimate/Tutorial-CodeClimateBuild-WithTestCoverage.png)
 
 A big fat F for test coverage, that sounds about right considering we have one empty test! That's a problem for future you to solve. 
 
@@ -306,19 +306,19 @@ Now lets complete this tutorial with some deployment to FireBase!
 
 First lets head over to Firebase.com, sign up or login with GitHub and when you're redirected to your project console, add your desired project. Easy stuff. 
 
-![Add firebase project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-Firebase-ProjectSetup-Start.png)
+![Add firebase project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-Firebase-ProjectSetup-Start.png)
 
 You'll then be asked to name your project:
 
-![Name firebase project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-Firebase-ProjectSetup-Naming.png)
+![Name firebase project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-Firebase-ProjectSetup-Naming.png)
 
 Then you can choose to add google analystics to your project, this is optional either way, I choose yet in case I want to see how my app is doing in the future. 
 
-![Google Analytics Option](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-AddProject-ConfigAnalytics.png)
+![Google Analytics Option](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-AddProject-ConfigAnalytics.png)
 
 After a few seconds of waiting, your project will be ready:
 
-![Firebase project ready](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-Firebase-AddProject-Done.png)
+![Firebase project ready](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-Firebase-AddProject-Done.png)
 
 Next, head to your terminal inside your react project, you need to run two very similar commands, but trust me, all will be explained. 
 
@@ -342,7 +342,7 @@ Before we initialize firebase, we need to create a build for our project, so run
 npm run-script build
 ```
 
-![Successful build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/ReactAppSetup/Tutorial-NPM-Build.png)
+![Successful build](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/ReactAppSetup/Tutorial-NPM-Build.png)
 
 With that done, head on over to your terminal inside of your desired project directory, and run:
 
@@ -352,19 +352,19 @@ firebase init
 
 This is what you'll see: 
 
-![Firebase in terminal](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseInitialize.png)
+![Firebase in terminal](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseInitialize.png)
 
 Use your arrow keys to select Hosting and click your space bar to highlight this like so:
 
-![Firebase Hosting Highlighted](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseHostingSetup.png)
+![Firebase Hosting Highlighted](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseHostingSetup.png)
 
 Hit enter, and then enter again to 'Use an existing project`:
 
-![Firebase use existing project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseProjectSetup.png)
+![Firebase use existing project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseProjectSetup.png)
 
 Next, select your desired project: 
 
-![Firebase select project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseChooseProject.png)
+![Firebase select project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseChooseProject.png)
 
 and hit enter. You'll be asked three questions for this point, the answers to which i'll show below:
 
@@ -377,7 +377,7 @@ and hit enter. You'll be asked three questions for this point, the answers to wh
 
 After entering these answers you'll see: 
 
-![Firebase initialization complete](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseHostingSetup.png)
+![Firebase initialization complete](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseHostingSetup.png)
 
 Now to deploy, run: 
 
@@ -387,11 +387,11 @@ firebase deploy
 
 You should see this in the terminal: 
 
-![Deploy complete](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseDeployFromCommandLine.png)
+![Deploy complete](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseDeployFromCommandLine.png)
 
 And if you navigate to your hosting url, you should see: 
 
-![Deployed App](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-SuccessfulCommandLineDeploy.png)
+![Deployed App](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-SuccessfulCommandLineDeploy.png)
 
 And last but not least, lets integrate this all with CircleCI. 
 
@@ -401,31 +401,31 @@ In your terminal, run:
 firebase login:ci
 ```
 
-![firebase authentication terminal](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseWaitingForAuth.png)
+![firebase authentication terminal](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseWaitingForAuth.png)
 
 This will launch a browser window, asking you to login and authenticate the use of firebase:
 
-![browser authenticate firebase](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-FirebaseWaitingForAuth.png)
+![browser authenticate firebase](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseWaitingForAuth.png)
 
 Upon success, you'll be given a Firebase token: 
 
-![successful authentication firebase token](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/Firebase/Tutorial-ObtainFirebaseTokenFromCommandLine.png)
+![successful authentication firebase token](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-ObtainFirebaseTokenFromCommandLine.png)
 
 Copy your token to your clipboard, and lets head over to your project's settings in circleci. This will be another environment variable like the one we did previously for Code Climate. 
 
 Click to add a new environment variable and paste your token into the value box. Name your environment variable 'FIREBASE_TOKEN'. 
 
-![Add firebase token as environment variable](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-AddFirebaseTokentoCircleCi.png)
+![Add firebase token as environment variable](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-AddFirebaseTokentoCircleCi.png)
 
 Click add variable and you should see your token next to your Code Climate test coverage reporter ID: 
 
-![Project environment variables](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-BothEnvironmentalVariablesAdded.png)
+![Project environment variables](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-BothEnvironmentalVariablesAdded.png)
 
 Now that's done, head back over to your project for the final step.
 
 Inside your circle ci folder, bring up your config.yml file and head to the bottom to where our firebase deploy script lives. Uncomment the line:
 
-![uncomment firebase deploy](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CircleCI/Tutorial-UncommentFirebaseScript.png)
+![uncomment firebase deploy](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-UncommentFirebaseScript.png)
 
 Now commit and push everything to GitHub and lets head over to our project build in circle ci to see it all come together: 
 
@@ -443,27 +443,27 @@ The first badge is our build badge, head over to your project's settings on Circ
 
 Under notifications on the left-hand side bar you'll find 'Status Badges', click on it:
 
-![circleci build badge](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-CopyCircleCIBuildStatusBadge.png)
+![circleci build badge](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/StatusBadges/Tutorial-CopyCircleCIBuildStatusBadge.png)
 
 Copy the markdown code to your clipboard and head to your README, where to paste it is up to you, but I like it at the very top, underneath my project's title:
 
-![Insert build badge inside README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-AddCircleCIBuildStatusBadge.png)
+![Insert build badge inside README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/StatusBadges/Tutorial-AddCircleCIBuildStatusBadge.png)
 
 Next, we're going to our maintainability and test coverage badges, so head over to your project's setting on CodeClimate.com:
 
-![Code Climate project settings](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/CodeClimate/Tutorial-Find-CodeClimateProjectSettings.png)
+![Code Climate project settings](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CodeClimate/Tutorial-Find-CodeClimateProjectSettings.png)
 
 Under extras on the left-hand side bar you'll find 'Badges', click on it:
 
-![Code Climate badges](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-CodeClimateStatusBadges.png)
+![Code Climate badges](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/StatusBadges/Tutorial-CodeClimateStatusBadges.png)
 
 Click the markdown tab for each, and copy both links over to your README, right below your circleci build badge:
 
-![Insert maintainability and coverage badges in README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-AddStatusBadges.png)
+![Insert maintainability and coverage badges in README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/StatusBadges/Tutorial-AddStatusBadges.png)
 
 Now commit and push, and head to GitHub to see the fruit of our labours: 
 
-![Badges on README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/media/StatusBadges/Tutorial-StatusBadgesImplemented.png)
+![Badges on README](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/StatusBadges/Tutorial-StatusBadgesImplemented.png)
 
 
 
