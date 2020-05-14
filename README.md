@@ -142,14 +142,17 @@ it('renders without error', () =>{
 
 It should now look like this: 
 
-![App.test.js full render test]()
+![App.test.js full render test](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Testing/Testing-App-Test.png)
 
 *and in App.js, insert `data-test="component-app"` into your top level <div> element*
   
-![App.js add data-test attribute]()
+![App.js add data-test attribute](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Testing/Testing-App.png)
 
-![test.js file after](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Testing/Tutorial-TestFileSetup.png)
-*After*
+Running 'npm test' in your terminal should now show: 
+
+![One test passing]()
+
+One passing test! Success!
 
 ### <a name="4-common-jest-error">4. Common Jest Error</a>
 
