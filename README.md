@@ -350,13 +350,9 @@ With that done, head on over to your terminal inside of your desired project dir
 firebase init
 ```
 
-This is what you'll see: 
+Use your arrow keys to select Hosting and click your space bar to highlight:
 
 ![Firebase in terminal](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseInitialize.png)
-
-Use your arrow keys to select Hosting and click your space bar to highlight this like so:
-
-![Firebase Hosting Highlighted](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Firebase/Tutorial-FirebaseHostingSetup.png)
 
 Hit enter, and then enter again to 'Use an existing project`:
 
