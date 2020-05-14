@@ -25,19 +25,9 @@ jobs:
       - run:
             name: Build Project
             command: npm run-script build
-  test:
-    docker:
-      - image: circleci/node:10.16.0
-    working_directory: ~/repo
-    steps:
       - run:
             name: Run Tests
             command: npm run-script test
-  report_test_coverage:
-    docker:
-      - image: circleci/node:10.16.0
-    working_directory: ~/repo
-    steps:
       - run:
             name: Setup Code Climate test-reporter
             command: |
@@ -49,11 +39,6 @@ jobs:
               ./cc-test-reporter before-build
               npm run test:coverage
               ./cc-test-reporter after-build --debug -t lcov --exit-code $?
-  deploy:
-    docker:
-      - image: circleci/node:10.16.0
-    working_directory: ~/repo
-    steps:
       - run:           
             name: Deploy to Firebase Hosting
             command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
