@@ -6,6 +6,10 @@
 
 How to setup a React project with create-react-app, test with code coverage using Jest and Enzyme, and integrate Circle CI, Code Climate, and Firebase.
 
+### [Introduction](#introduction)
+1. [Initialize your Git Repository](#1-initializing-git)
+2. [Running Create React App](#2-create-react-app)
+
 ### [Testing with Jest & Enzyme](#testing)
 1. [Installing Dependancies](#1-installing-our-dependancies) <br>
 2. [Setting up your App.test.js file](#2-setting-up-your-app.test.js-file) <br>
@@ -25,29 +29,41 @@ How to setup a React project with create-react-app, test with code coverage usin
 ### [Putting it all together](#together)
 ### [Fun Extra: Status Badges](#badges)
 
-## Introduction & running create-react-app
+## <a name="Introduction">Introduction</a>
 
 In this tutorial, I'm going to walk through how to setup a React project from create-react-app with testing using Jest and Enzyme, install check-props and check-prop-types as dependencies so we can test props, then create continuous integration and deployment with CircleCI and Firebase. In my circleci configuation, I'll be adding in some Code Climate setup so we can add badass badges to every project.
 
-First things first, initialize a git repo in an empty folder and run create-react-app with your desired project name: 
+### <a name="1-initializing-git">1. Initialize your Git Repository</a>
+
+First things first, initialize a git repo in an empty folder: 
 
 ```
 $ git init
 ```
 
+### <a name="2-create-react-app">2. Running Create React App</a>
+
+Next, run create-react-app with your desired project name:
+
 ```
-$ npx create-react-app project_name
+$ npx create-react-app your-project-name
 ```
 
 ![Terminal Screenshot - Running create-react-app](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/ReactAppSetup/Tutorial-GitInit.png)
 
-Once create-react-app has finished doing it's thing, lets do some folder cleanup (Optional).
+Once create-react-app has finished doing its thing, lets do some folder cleanup (Optional).
 
 I like to just drag my react project up one level to my root repo folder, delete the now empty React project folder, and add my own README to my project.
 
 ![Project Screenshot - Completed create-react-app project](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/ReactAppSetup/Tutorial-DeleteCreateReactAppFolder.png)
 
-Next lets head over to our package.json. Between your test and eject scripts, add the following line, followed by a comma: 
+Now feel free to go through the process of commiting your code and pushing your project up to GitHub. 
+
+## <a name="testing">Setting up testing with Jest and Enzyme</a>
+
+### <a name="1-installing-our-dependancies">1. Installing our dependancies</a>
+
+First, lets head over to our package.json. Between your test and eject scripts, add the following line, followed by a comma: 
 
 ```
 "test:coverage": "set CI=true && react-scripts test --coverage",
@@ -71,11 +87,7 @@ Your package.json should now look like this:
 
 ![Add test:coverage script and jest ignore coverage](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-AddScripts-Coverage%26IgnoreCoverage.png)
 
-## <a name="testing">Setting up testing with jest and enzyme</a>
-
-### <a name="1-installing-our-dependancies">1. Installing our dependancies</a>
-
-Now that's done, lets install enzyme and the adapters needed to make it work with jest, which is already installed with create-react-app by default:
+Now that's done, lets install Enzyme and the adapters needed to make it work with Jest, which is already installed with create-react-app by default:
 
 ```
 npm install --save-dev jest jest-enzyme enzyme enzyme-adapter-react-16
