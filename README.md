@@ -150,7 +150,7 @@ It should now look like this:
 
 Running 'npm test' in your terminal should now show: 
 
-![One test passing]()
+![One test passing](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/Testing/Testing-Passing-Render-Test.png)
 
 One passing test! Success!
 
