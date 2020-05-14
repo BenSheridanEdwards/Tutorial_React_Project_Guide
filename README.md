@@ -7,7 +7,7 @@
 How to setup a React project with create-react-app, test with code coverage using Jest and Enzyme, and integrate Circle CI, Code Climate, and Firebase.
 
 ### [Introduction](#introduction)
-1. [Initialize your Git Repository](#1-initializing-git)
+1. [Initialize your Git repository](#1-initializing-git)
 2. [Running Create React App](#2-create-react-app)
 
 ### [Testing with Jest & Enzyme](#testing)
