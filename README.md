@@ -1,10 +1,10 @@
-# Tutorial - How to setup a React project with create-react-app, test with code coverage using Jest and Enzyme, and integrate Circle CI, Code Climate, and Firebase.
+# React Project Guide (Tutorial) - with Create React App, Jest & Enzyme, Circle CI, Code Climate, and Firebase
 
 [![CircleCI](https://circleci.com/gh/BenSheridanEdwards/Tutorial_React_Project_Guide.svg?style=svg)](https://circleci.com/gh/BenSheridanEdwards/Tutorial_React_Project_Guide)
 [![Maintainability](https://api.codeclimate.com/v1/badges/87096c1417a643cd3efd/maintainability)](https://codeclimate.com/github/BenSheridanEdwards/Tutorial_React_Project_Guide/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/87096c1417a643cd3efd/test_coverage)](https://codeclimate.com/github/BenSheridanEdwards/Tutorial_React_Project_Guide/test_coverage)
 
-How to build a React application with Jest, Enzyme, CircleCI, Code Climate &amp; Firebase
+How to setup a React project with create-react-app, test with code coverage using Jest and Enzyme, and integrate Circle CI, Code Climate, and Firebase.
 
 ### [Testing with Jest & Enzyme](#testing)
 1. [Installing Dependancies](#1-installing-our-dependancies) <br>
