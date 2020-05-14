@@ -212,8 +212,7 @@ jobs:
       #         ./cc-test-reporter after-build --debug -t lcov --exit-code $?
       # - run:           
       #       name: Deploy to Firebase Hosting
-      #       command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
-      #       description: Run tests with coverage and upload results to code climate          
+      #       command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'        
 ```
 
 ![Pasted Config.yml file](https://github.com/BenSheridanEdwards/Tutorial_React_Project_Guide/blob/master/images/CircleCI/Tutorial-CircleCIConfigFile-RETAKE.png)
